@@ -21,7 +21,16 @@ class Log(Activation):
         return np.pow(np.e,x)/(1+np.pow(np.e,x))
 
     super().__init__(log_act, log_prime)
-    
+
+class Final(Activation):
+  def __init__(self):
+    def final(x):
+      return x
+    def final_prime(x):
+      return 1
+
+    super().__init__(final, final_prime) 
+
 class Sigmoid(Activation):
     def __init__(self):
         def sigmoid(x):
